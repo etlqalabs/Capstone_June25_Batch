@@ -1,7 +1,6 @@
 1. Extraction : Optimize this function following the steps as in file reading
    extract_stores_data_from_file_load_to_staging_table()
-
 2. Read and try to use logging levels in logger function
 3. Use the logger in all other extraction functions
 4. Optimize with common function for reading and writing in Transfromation ( logger, execption handling )
-5. Loading part - develop reaming 3 data load functions
+5. Load component - develop reaming 3 data load functions
