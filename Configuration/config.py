@@ -14,3 +14,8 @@ MYSQL_DATABASE = 'retaildwh'
 
 
 # Linux server details
+hostname ='192.168.0.111'
+user_name = 'etlqalabs'
+pass_word ='root'
+linux_file_path = '/home/etlqalabs/sales_data.csv'
+project_file_path = 'SourceSystems/sales_data_linux.csv'

@@ -1,7 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import cx_Oracle
-from CommonUtilities.utils import read_data_from_file_write_to_stag
+from CommonUtilities.utils import read_data_from_file_write_to_stag, download_sales_file_from_Linux
 from Configuration.config import *
 import logging
 
@@ -56,8 +56,12 @@ def extract_stores_data_from_file_load_to_staging_table():
 
 
 if __name__ == "__main__":
-    extract_sales_data_from_file_load_to_staging_table("SourceSystems/sales_data.csv","csv","stag_sales",mysql_conn)
+    download_sales_file_from_Linux()
+    extract_sales_data_from_file_load_to_staging_table("SourceSystems/sales_data_linux.csv","csv","stag_sales",mysql_conn)
     extract_product_data_from_file_load_to_staging_table("SourceSystems/product_data.csv","csv","stag_product",mysql_conn)
     extract_supplier_data_from_file_load_to_staging_table("SourceSystems/supplier_data.json","json","stag_supplier",mysql_conn)
     extract_inventory_data_from_file_load_to_staging_table("SourceSystems/inventory_data.xml","xml","stag_inventory",mysql_conn)
     extract_stores_data_from_file_load_to_staging_table()
+
+
+
